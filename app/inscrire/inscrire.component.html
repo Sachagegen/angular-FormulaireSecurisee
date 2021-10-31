@@ -1,0 +1,27 @@
+<button (click)="versPageEnregistrement()">Back</button>
+
+<form (ngSubmit)="Inscrire(f)" #f="ngForm" style="text-align:center">
+  <label>Login : </label>
+
+  <input
+    required
+    name="login"
+    [(ngModel)]="user.login"
+    type="text"
+    placeholder="Login"
+  />
+  <br />
+  <label>Mot de passe : </label>
+  <input
+    required
+    name="pwd"
+    [(ngModel)]="user.pwd"
+    type="password"
+    pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})"
+    minlength="8"
+    placeholder="Mot de passe"
+  />
+  <br />
+  <br />
+  <button type="submit" [disabled]="!f.valid">S'inscrire</button>
+</form>

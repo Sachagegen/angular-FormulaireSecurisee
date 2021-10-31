@@ -1,0 +1,29 @@
+<form (ngSubmit)="clicBouton()" #f="ngForm" style="text-align:center">
+  <label>Login : </label>
+
+  <input
+    required
+    name="login"
+    [(ngModel)]="user.login"
+    type="text"
+    placeholder="Login"
+  />
+  <br />
+  <label>Mot de passe : </label>
+  <input
+    required
+    name="pwd"
+    [(ngModel)]="user.pwd"
+    type="password"
+    placeholder="Mot de passe"
+  />
+  <br />
+  <br />
+  <button type="submit" [disabled]="!f.valid">OK</button>
+  <br />
+  <br />
+  <button type="submit" [disabled]="!f.valid" (click)="reset(f)">Reset</button>
+  <br />
+  <br />
+  <a routerLink="inscrire" class="signup"> Créer un compte </a>
+</form>
